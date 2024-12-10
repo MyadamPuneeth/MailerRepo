@@ -1,0 +1,47 @@
+﻿@model Mailer.Models.EmailViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailer</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+    <header>
+        <h1>Mailer</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <form asp-action="MailerHomePage" method="post">
+                <div class="form-group">
+                    <label for="email">Recipient Email:</label>
+                    <input asp-for="UserEmail" type="email" id="email" placeholder="Enter recipient's email" required>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <form asp-action="MailerHomePage" id="downloadForm" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="excel">Upload Excel File:</label>
+                    <input asp-for="ExcelSheet" type="file" id="excel" accept=".xlsx, .xls" required>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="file-link">File Link:</label>
+                    <input type="url" id="file-link" name="file-link" placeholder="Enter file link" required>
+                    <button type="submit">Submit</button>
+                </div>
+                <p>Tihs action is not yet functional</p>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mailer App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
